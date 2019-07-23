@@ -1,0 +1,17 @@
+{
+   "hosts": [
+      "manganelo.com": {
+         "url":"https://manganelo.com/",
+         "titleFormat": "TITLE Chapter NUMBER Online For Free - MangaNelo.com",
+         "chapterPath": "/chapter/TITLE/chapter_NUMBER",
+         "comments": "Title in url path could be id number sometimes"
+      },
+	
+      {
+         "id":"07",
+         "language": "C++",
+         "edition": "second",
+         "author": "E.Balagurusamy"
+      }
+   ]
+}

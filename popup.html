@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>popup</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #fffcfc;
+            width: 250px;
+            margin: 0px;
+            cursor: default;
+            font-family: 'Poppins', sans-serif;
+        }
+        hr {
+            margin: 0px;
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h2 {
+            text-align: center;
+        }
+        #stuff {
+            display: flex;
+            flex-direction: column;
+        }
+        .settings {
+            padding-left: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        #nipple {
+            display: none;
+        }
+        a {
+            padding-left: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-decoration: none;
+            color: black;
+            cursor: default;
+        }
+        a:hover, .settings:hover {
+            background-color: #EAEAEA;
+        }
+        img {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>MangaTracker</h2>
+    <hr/>
+    <img id="nipple" src="nipple.png" alt="nipple">
+    <div id="stuff"></div>
+    <hr/>
+    <div id="save" class="settings">Save Page</div>
+    <div id="clear" class="settings">Clear</div>
+    <div id="show" class="settings">Click Me!</div>
+    <script src="popup.js"></script>
+</body>
+</html>
