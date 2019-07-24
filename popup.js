@@ -25,7 +25,7 @@ document.getElementById('save').onclick = function() {
     if (rightDomain === true) {
         let path = activeurl.pathname.split("/");
         if (path.length > 2) {
-            let name = path[1].toUpperCase();
+            let name = path[1].toUpperCase().replace(/-/g, " ");
             let data = [name, path[2], 1, url]; // name, chapter, page, url
             if (path.length > 3) {
                 data[2] = path[3]; // if not on first page of chapter
@@ -39,17 +39,13 @@ document.getElementById('save').onclick = function() {
             alert("Must be on a Manga Page");
         }
     } else {
-        alert("Only works on MangaReader");
+        alert("Must be in a MangaReader series");
     }
 }
 
 // loads all keys and makes them links
 function loadLinks() {
     chrome.storage.sync.get(null, function(items) {
-        // let keys = Object.keys(items);
-        // keys.forEach(function(key) {
-        //     makeLink(key);
-        // });
         for (let item in items) {
             makeLink(items[item]);
         }
@@ -66,14 +62,15 @@ function makeLink(data) {
 }
 
 // clears all stored info
-document.getElementById('clear').onclick = function() { // clears all stored information
-    chrome.storage.sync.clear(function() {
-        var error = chrome.runtime.lastError;
-        if (error) {
-            console.error(error);
-        }
-        clearLinks();
-    });
+document.getElementById('edit').onclick = function() { // clears all stored information
+    // chrome.storage.sync.clear(function() {
+    //     var error = chrome.runtime.lastError;
+    //     if (error) {
+    //         console.error(error);
+    //     }
+    //     clearLinks();
+    // });
+    chrome.tabs.create({url: "edit.html"});
 }
 
 function clearLinks() {
